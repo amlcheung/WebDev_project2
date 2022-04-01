@@ -1,15 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { createStore } from 'redux';
+import App from './component/App';
+import Instructions from './component/Instructions';
+import Easy from './component/Easy';
+import Medium from './component/Medium';
+import Hard from './component/Medium';
+import NavBar from './component/Medium';
+
+
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <BrowserRouter>
+    <NavBar/>
+    <Routes>
+      <Route path="/instructions" element={<Instructions/>}/>
+      <Route path="/easy" element={<Easy/>}/>
+      <Route path="/medium" element={<Medium/>}/>
+      <Route path="/hard" element={<Hard/>}/>
+    </Routes>
+  </BrowserRouter>
+  ,
+  document.getElementById('root'));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
