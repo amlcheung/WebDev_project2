@@ -6,9 +6,9 @@ function App() {
 
     <body>
       <div>
-          <div class="header-text header-box">Welcome to Wordle</div>
+          <div className="header-text header-box">Welcome to Wordle</div>
 
-          <div class="navbar-container">
+          <div className="navbar-container">
           {/* <a href="">Instructions</a>
           <a href="https://amlcheung.github.io/project1/Projects/">Easy</a>
           <a href="https://amlcheung.github.io/project1/AboutMe/">Medium</a>
