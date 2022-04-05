@@ -1,14 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import './NavBar.css';
+import App from './App';
 
-export default function Navbar() {
+function NavBar() {
+
+
+
+
     return (
-        <div>
-            Navigation Bar
-            <Link to={"/instructions"}>Instructions</Link>
+        <div className="center">
+            <Link to={"/"}> Home </Link>
             <Link to={"/easy"}>Easy</Link>
             <Link to={"/medium"}>Medium</Link>
             <Link to={"/hard"}>Hard</Link>
         </div>
-    )
+    );
 }
+
+export default NavBar;

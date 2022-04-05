@@ -1,5 +1,9 @@
-Body {
-  background-color: white;
+/* Body {
+  background-color: black;
+} */
+
+.page-color {
+  background-color: black;
 }
 
 .header-text {
@@ -8,14 +12,10 @@ Body {
   color: white;
 }
 
-.header-box {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
 
 
-.navbar-container {
+
+/* .navbar-container {
   display: grid;
     position: sticky;
     top: 0%;
@@ -30,4 +30,4 @@ Body {
     background-color: white;
     border-radius: 8px;
     margin-bottom: 20px;
-}
+} */

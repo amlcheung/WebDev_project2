@@ -10,22 +10,33 @@ import Medium from './component/Medium';
 import Hard from './component/Hard';
 import NavBar from './component/NavBar';
 import { colorReducer } from './reducer/colorReducer';
+import { WordGeneratorReducer } from './reducer/WordGeneratorReducer';
 
 
-const store = createStore(colorReducer);
+// const storeColor = createStore(colorReducer);
+const store = createStore(WordGeneratorReducer);
+// const storeMediumWord = createStore(WordGeneratorReducer);
+// const storeHardWord = createStore(WordGeneratorReducer);
 
 ReactDOM.render(
-  
   <BrowserRouter>
     <NavBar/>
-    <App/>
-
-    <Routes>
-      <Route path="/instructions" element={<Instructions/>}/>
-      <Route path="/easy" element={<Easy/>}/>
-      <Route path="/medium" element={<Medium/>}/>
-      <Route path="/hard" element={<Hard/>}/>
-    </Routes>
+    <Provider store={store}>
+      <Routes>
+          <Route path="/" element={
+              <App/>
+          }></Route>
+          <Route path="/easy" element={
+              <Easy />
+          }></Route>
+          <Route path="/medium" element={
+              <Medium />
+          }></Route>
+          <Route path="/hard" element={
+            <Hard />
+          }></Route>
+        </Routes>
+    </Provider>
   </BrowserRouter>
   
   ,document.getElementById('root'));
