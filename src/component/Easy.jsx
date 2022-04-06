@@ -11,11 +11,13 @@ export default function Easy(props) {
 
     function getWord() {
         const action = {
-            type: 'EASY'
+            type: 'EASY',
         }
 
         dispatch(action);
     }
+
+    
 
    
 
