@@ -5,16 +5,31 @@ import './InputBox.css';
 export default function InputBox(props) {
     const [candidate, setCandidate] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        evaluateCandidate();
-        console.log({candidate});
+    const [array_of_guesses, updateGuessArray] = useState([]);
+
+    function test() {
+        let test = candidate;
+        // console.log(test);
+        evaulateInput(test);
+        console.log(array_of_guesses);
+
     }
 
-    function evaluateCandidate() {
-        let test = {candidate};
-        console.log("test: " + test);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // console.log({candidate});
+        // console.log(candidate);
+        test();
     }
+
+
+    function evaulateInput(userGuess) {
+        // console.log(userGuess);
+        updateGuessArray(array_of_guesses => [...array_of_guesses, userGuess]);
+    
+    }
+
 
 
     return (
@@ -23,7 +38,7 @@ export default function InputBox(props) {
                     Enter Word:
                     <input 
                         type="text"
-                        value={candidate}
+                        // value={candidate}
                         onChange={(e) => setCandidate(e.target.value)}
                     ></input>
                 </label>
