@@ -27,7 +27,7 @@ ReactDOM.render(
               <App/>
           }></Route>
           <Route path="/easy" element={
-              <Easy />
+              <Easy/>
           }></Route>
           <Route path="/medium" element={
               <Medium />

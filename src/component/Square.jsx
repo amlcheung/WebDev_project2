@@ -1,6 +1,12 @@
 /** needs square */
 
-function Square() {
+export default function Square() {
+
+    // function getWordFromState(state) {
+
+
+    //     return state[props.displayInstance];
+    // }
 
 
     return(
@@ -15,5 +21,3 @@ function Square() {
 
 
 }
-
-export default Square;

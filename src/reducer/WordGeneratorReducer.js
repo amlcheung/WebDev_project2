@@ -2,6 +2,8 @@
 
 const initState = {
     word: null,
+    // word history array
+    // other values
 }
 
 const max = 10;
@@ -49,6 +51,10 @@ export function WordGeneratorReducer(state = initState, action) {
         }
 
     }
+
+    // if (action.type === "EVALUATE_WORD") {
+
+    // }
 
     return state;
 }
