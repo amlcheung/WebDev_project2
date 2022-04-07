@@ -15,7 +15,6 @@ export function WordGeneratorReducer(state = initState, action) {
         const easyWords = ["Cable", "Faces", "Label", "Nacho", "Wacky", 
                        "Yacht", "Adult", "Grass", "Water", "Tower"];
 
-
         let randomIndexEasy = Math.floor(Math.random() * (max - min) + min);
 
         console.log(easyWords[randomIndexEasy]);
@@ -54,16 +53,38 @@ export function WordGeneratorReducer(state = initState, action) {
     }
 
     if (action.type === "EVALUATE_WORD") {
-        let newWord = action.value
-        //history.push(action.value);
-        console.log(state.history);
-        //console.log(...initState.history);
-        return {
-            ...state,
-            history: [state.history, newWord],
+        let newWord = action.value.toString();
+        // Easy
+        if (state.word.length === 5 && newWord.length === 5){
+            console.log(state.history);
+            return {
+                ...state,
+                history: [state.history, action.value],
+            }
+        }
+        // Medium
+        else if (state.word.length === 6 && newWord.length === 6){
+            console.log(state.history);
+            return {
+                ...state,
+                history: [state.history, action.value],
+            }
+        }
+        // Hard
+        else if (state.word.length === 7 && newWord.length === 7){
+            console.log(state.history);
+            return {
+                ...state,
+                history: [state.history, action.value],
+            }
+        }
+        // Not valid
+        else {
+            // Invalid! The word must be of length {state.word.length}.
         }
     }
-
     return state;
 }
+
+
 

@@ -11,7 +11,7 @@ export default function InputBox(props) {
     const dispatch = useDispatch();
 
     function sendWordToHistory() {
-        let test = {candidate};
+        let test = candidate;
         const action = {
             type: 'EVALUATE_WORD',
             value: test,
@@ -23,19 +23,18 @@ export default function InputBox(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         evaluateCandidate();
-       // sendWordToHistory();
+        //sendWordToHistory();
         console.log({candidate});
     }
 
-
-
     function evaluateCandidate() {
-        let test = {candidate};
-        sendWordToHistory();
-        console.log(test);
+        let newWord = {candidate};
+        //if (newWord.length == 5 && curWord.length == 5){
+            sendWordToHistory();
+            console.log(newWord);
+       // }
+        //console.log(toString(newWord));
     }
-
-
 
     // evaulateInput();
 
@@ -49,9 +48,6 @@ export default function InputBox(props) {
     // const curWord = useSelector(getWordFromState, shallowEqual);
 
     
-
-
-
     return (
         <div>
             <form onSubmit={e => {handleSubmit(e)}}>
@@ -60,7 +56,7 @@ export default function InputBox(props) {
                         <input 
                             type="text"
                             value={candidate}
-                            onChange={(e) => setCandidate(e.target.value)}
+                            onChange={(e) => setCandidate(e.target.value.trim())}
                         ></input>
                     </label>
                     <input type="submit" value="Submit"></input>
