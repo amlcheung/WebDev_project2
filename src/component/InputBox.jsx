@@ -26,12 +26,12 @@ export default function InputBox(props) {
 
     // console.log(array_of_guesses);
 
-    function getWordFromState(state) {
-        console.log("i was useSelected!")
-        return state[props.displayInstance];
-    }
+    // function getWordFromState(state) {
+    //     // console.log("i was useSelected!")
+    //     return state[props.displayInstance];
+    // }
 
-    const curWord = useSelector(getWordFromState, shallowEqual);
+    // const curWord = useSelector(getWordFromState, shallowEqual);
 
     
 
@@ -52,7 +52,7 @@ export default function InputBox(props) {
 
 
                 </form>
-                <div>Here: {curWord}</div>
+                {/* <div>Here: {curWord}</div> */}
         </div>
     );
 
