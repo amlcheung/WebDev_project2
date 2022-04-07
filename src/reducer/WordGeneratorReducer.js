@@ -2,6 +2,7 @@
 
 const initState = {
     word: null,
+    history: [],
     // word history array
     // other values
 }
@@ -52,9 +53,16 @@ export function WordGeneratorReducer(state = initState, action) {
 
     }
 
-    // if (action.type === "EVALUATE_WORD") {
-
-    // }
+    if (action.type === "EVALUATE_WORD") {
+        let newWord = action.value
+        //history.push(action.value);
+        console.log(state.history);
+        //console.log(...initState.history);
+        return {
+            ...state,
+            history: [state.history, newWord],
+        }
+    }
 
     return state;
 }

@@ -29,118 +29,62 @@ export default function Easy(props) {
     // debugger
     
 
-   
-
     return(
         <div>
             <h1>Difficulty: Easy, curWord: {curWord}</h1>
             <button onClick={getWord}>Start Game</button>
             <InputBox></InputBox>
             {/* <div>Here: {curWord}</div> */}
-            <div className="board-container">
-                {/* <div><Square></Square></div>
-                <div><Square></Square></div>
-                <div><Square></Square></div>
-                <div><Square></Square></div>
-                <div><Square></Square></div> */}
+            <div id="board-container">
 
                 <Square></Square>
                 <Square></Square>
-
                 <Square></Square>
-
                 <Square></Square>
-
                 <Square></Square>
 
 
-
-            {/* <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square> */}
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
 
 
-{/* 
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
 
 
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
 
 
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
 
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-
-
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
 
 
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square>
-
-            <Square></Square> */}
-
-
-
-               
-
-                
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
+                <Square></Square>
             </div>
     </div>
-            
-
-      
-        
-
-      
 
     );
 }
