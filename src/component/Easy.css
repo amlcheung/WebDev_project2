@@ -7,9 +7,13 @@ Body {
     width: 500px;
     height: 700px;
     margin: 1px;
+    /* border: 1px solid black; */
     display: grid;
     grid-template-columns: 100px 100px 100px 100px 100px;
-    grid-row: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    
+    
+
 }
 
 

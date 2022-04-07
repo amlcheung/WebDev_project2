@@ -21,7 +21,6 @@ export default function Easy(props) {
     }
 
     function getWordFromState(state) {
-        // console.log("i was useSelected!")
         return state.word;
     }
 
@@ -34,45 +33,18 @@ export default function Easy(props) {
 
     return(
         <div>
-            <h1>Difficulty: Easy</h1>
-            {curWord}
+            <h1>Difficulty: Easy, curWord: {curWord}</h1>
             <button onClick={getWord}>Start Game</button>
             <InputBox></InputBox>
             {/* <div>Here: {curWord}</div> */}
             <div className="board-container">
-                <Square></Square>
+                {/* <div><Square></Square></div>
+                <div><Square></Square></div>
+                <div><Square></Square></div>
+                <div><Square></Square></div>
+                <div><Square></Square></div> */}
 
                 <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
                 <Square></Square>
 
                 <Square></Square>
@@ -82,36 +54,83 @@ export default function Easy(props) {
                 <Square></Square>
 
 
-                <Square></Square>
 
-                <Square></Square>
+            {/* <Square></Square>
 
-                <Square></Square>
+            <Square></Square>
 
-                <Square></Square>
+            <Square></Square>
 
-                <Square></Square>
+            <Square></Square>
 
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
+            <Square></Square> */}
 
 
-                <Square></Square>
+{/* 
 
-                <Square></Square>
+            <Square></Square>
 
-                <Square></Square>
+            <Square></Square>
 
-                <Square></Square>
+            <Square></Square>
 
-                <Square></Square>
+            <Square></Square>
+
+            <Square></Square>
+
+
+
+
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+
+
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square>
+
+            <Square></Square> */}
+
+
+
+               
 
                 
             </div>
