@@ -16,6 +16,7 @@ const max = 10;
 const min = 0;
 
 export function WordGeneratorReducer(state = initState, action) {
+    //debugger
     if (action.type === 'EASY') {
         const easyWords = ["Cable", "Faces", "Label", "Nacho", "Wacky", 
                        "Yacht", "Adult", "Grass", "Water", "Tower"];
@@ -25,6 +26,7 @@ export function WordGeneratorReducer(state = initState, action) {
         console.log("random selected word: " + easyWords[randomIndexEasy]);
 
         return {
+            ...state, 
             word: easyWords[randomIndexEasy],
         }
     }
@@ -71,7 +73,7 @@ export function WordGeneratorReducer(state = initState, action) {
             return {
                 invalidWord: false,
                 ...state,
-                history: [state.history, action.value],
+                history: [...state.history, action.value],
             }
         }
         // Medium
@@ -79,7 +81,7 @@ export function WordGeneratorReducer(state = initState, action) {
             console.log(state.history);
             return {
                 ...state,
-                history: [state.history, action.value],
+                history: [...state.history, action.value],
             }
         }
         // Hard
@@ -87,7 +89,7 @@ export function WordGeneratorReducer(state = initState, action) {
             console.log(state.history);
             return {
                 ...state,
-                history: [state.history, action.value],
+                history: [...state.history, action.value],
             }
         }
         // Not valid

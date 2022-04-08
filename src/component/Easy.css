@@ -1,7 +1,6 @@
-Body {
+body {
   background-color: white(0, 0, 0, 0.856);
 }
-
 
 #board-container {
   width: 500px;
