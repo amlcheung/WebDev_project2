@@ -24,20 +24,16 @@ export default function Easy(props) {
         return state.word;
     }
 
-    const curWord = useSelector(getWordFromState, shallowEqual);
-
-    // debugger
-    
+    const randomWord = useSelector(getWordFromState, shallowEqual);
 
     return(
         <div>
-            <h1>Difficulty: Easy, curWord: {curWord}</h1>
+            <h1>Difficulty: Easy, randomWord: {randomWord}</h1>
             <button onClick={getWord}>Start Game</button>
             <InputBox></InputBox>
-            {/* <div>Here: {curWord}</div> */}
             <div id="board-container">
 
-                <Square></Square>
+                <Square square="square-white"></Square>
                 <Square></Square>
                 <Square></Square>
                 <Square></Square>
