@@ -1,8 +1,13 @@
 // reducer to randomly select word?
 
 const initState = {
-    word: null,
+    word: "",
     history: [],
+    // invalidWord: false,
+    // invalidWordComment: "invalid word",
+    // validWordComment: "",
+    // userGuess: "",
+
     // word history array
     // other values
 }
@@ -17,7 +22,7 @@ export function WordGeneratorReducer(state = initState, action) {
 
         let randomIndexEasy = Math.floor(Math.random() * (max - min) + min);
 
-        console.log(easyWords[randomIndexEasy]);
+        console.log("random selected word: " + easyWords[randomIndexEasy]);
 
         return {
             word: easyWords[randomIndexEasy],
@@ -52,12 +57,19 @@ export function WordGeneratorReducer(state = initState, action) {
 
     }
 
+
     if (action.type === "EVALUATE_WORD") {
+        console.log("eval function called");
         let newWord = action.value.toString();
+        // console.log("input word length: " + newWord.length)
         // Easy
         if (state.word.length === 5 && newWord.length === 5){
-            console.log(state.history);
+            console.log("history array: " + state.history);
+            console.log("valid");
+
+
             return {
+                invalidWord: false,
                 ...state,
                 history: [state.history, action.value],
             }
@@ -81,6 +93,10 @@ export function WordGeneratorReducer(state = initState, action) {
         // Not valid
         else {
             // Invalid! The word must be of length {state.word.length}.
+            return {
+                ...state,
+                // invalidWord: true,
+            }
         }
     }
     return state;

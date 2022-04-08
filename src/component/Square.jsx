@@ -1,13 +1,11 @@
 /** needs square */
+import React, { useState } from 'react';
 
-export default function Square() {
+export default function Square(props) {
 
-    // function getWordFromState(state) {
+    
 
-
-    //     return state[props.displayInstance];
-    // }
-
+    
 
     return(
         <div>Square</div>
