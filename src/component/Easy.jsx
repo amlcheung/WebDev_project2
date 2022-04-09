@@ -131,12 +131,6 @@ export default function Easy(props) {
                 <div id="board-container">
                     {wordComponents}
                 </div>
-            {/* </div>
-            <button className="button-style" onClick={getWord}>Start Game</button>
-            <MessageBoard></MessageBoard>
-            <InputBox></InputBox>
-            <div id="board-container">
-                {wordComponents} */}
             </div>
     </div>
     );

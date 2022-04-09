@@ -29,14 +29,14 @@ export default function InputBox(props) {
     return (
         <div>
             <form onSubmit={e => {handleSubmit(e)}}>
-                    <label className="text">
+                    <div className="text">
                         Enter Word:
+                        </div>
                         <input 
                             type="text"
                             id = "guess"
                             onChange={(e) => setCandidate(e.target.value.trim())}
                         ></input>
-                    </label>
                     <input type="submit" value="Submit"></input>
             </form>
         </div>
