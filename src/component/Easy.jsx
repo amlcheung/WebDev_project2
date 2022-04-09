@@ -40,7 +40,6 @@ export default function Easy(props) {
             }
         }
     }
-
     const randomWord = useSelector(getWordFromState, shallowEqual);
     const guessArray= useSelector(getWordFromHistory, shallowEqual);
     console.log(randomWord.charAt(0));
@@ -68,8 +67,16 @@ export default function Easy(props) {
         for (let i = 0; i < 7; i++){
             const list = []
             for (let j = 0; j < guessArray[i].length; j++){
-                const component = <Square letter={guessArray[i].toUpperCase().charAt(j)}></Square>
-                list.push(component);
+                if (guessArray[i].toUpperCase().charAt(j) == randomWord.charAt(j)){
+                    const component = <Square color='green' letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
+                    list.push(component);
+                } else if (letterInRandomWord(randomWord, guessArray[i].toUpperCase().charAt(j))){
+                    const component = <Square color='yellow' letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
+                    list.push(component);
+                } else {
+                    const component = <Square color='white'letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
+                    list.push(component);
+                }
             }
             wordComponents.push(list);
         }
