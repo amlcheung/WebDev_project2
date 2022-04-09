@@ -1,6 +1,6 @@
-/* Body {
+body {
   background-color: black;
-} */
+}
 
 .page-color {
   background-color: black;
@@ -8,12 +8,10 @@
 
 .header-text {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 200px;
+  font-size: 100px;
   color: white;
+  text-align: center;
 }
-
-
-
 
 /* .navbar-container {
   display: grid;
