@@ -35,16 +35,20 @@ export default function Easy(props) {
 
     const randomWord = useSelector(getWordFromState, shallowEqual);
     const guessArray= useSelector(getWordFromHistory, shallowEqual);
-    console.log(guessArray);
+    console.log(randomWord.charAt(0));
     const wordComponents = [];
     // If the number of guesses is less than 7, add the guess
     if (guessArray.length <= 7){
         for (let i = 0; i < guessArray.length; i++){
             const list = []
             for (let j = 0; j < guessArray[i].length; j++){
-                //const list = []
-                const component = <Square letter={guessArray[i].charAt(j)}></Square>
-                list.push(component);
+                if (guessArray[i].charAt(j) == randomWord.charAt(j)){
+                    const component = <Square color='green' letter={guessArray[i].charAt(j)} ></Square>
+                    list.push(component);
+                } else {
+                    const component = <Square color='white'letter={guessArray[i].charAt(j)} ></Square>
+                    list.push(component);
+                }
             }
             wordComponents.push(list);
         }
@@ -53,7 +57,6 @@ export default function Easy(props) {
         for (let i = 0; i < 7; i++){
             const list = []
             for (let j = 0; j < guessArray[i].length; j++){
-                //const list = []
                 const component = <Square letter={guessArray[i].charAt(j)}></Square>
                 list.push(component);
             }
@@ -64,32 +67,12 @@ export default function Easy(props) {
     for (let z = 0; z < 7 - guessArray.length; z++){
         const blankList = []
             for (let j = 0; j < 5; j++){
-                //const list = []
                 const component = <Square color="white"></Square>
                 blankList.push(component);
             }
             wordComponents.push(blankList);
     } 
-    /*
-    if (randomWord){
-        const list = []
-        for (let i = 0; i < randomWord.length; i++){
-            //const list = []
-            const component = <Square square="square-white" letter={randomWord.charAt(i)}></Square>
-            list.push(component);
-        }
-        wordComponents.push(list);
-    }
-    if (randomWord){
-        const list = []
-        for (let i = 0; i < randomWord.length; i++){
-            //const list = []
-            const component = <Square square="square-white" letter={randomWord.charAt(i)}></Square>
-            list.push(component);
-        }
-        wordComponents.push(list);
-    }
-    */
+
     return(
         <div>
             <h1>Difficulty: Easy, randomWord: {randomWord}</h1>
