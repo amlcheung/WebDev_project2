@@ -1,11 +1,17 @@
 .text-format {
     width: auto;
     height: auto;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
     color: white;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+}
+
+.game-rules-format {
+    text-decoration: underline;
 }

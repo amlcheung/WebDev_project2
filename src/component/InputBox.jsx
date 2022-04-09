@@ -5,6 +5,7 @@ import './InputBox.css';
 
 export default function InputBox(props) {
     const [candidate, setCandidate] = useState("");
+    const [input, setInputBox] = useState("");
 
     const dispatch = useDispatch();
 
@@ -21,8 +22,10 @@ export default function InputBox(props) {
         e.preventDefault();
         console.log("userGuess: " + candidate);
         sendWordToHistory();
+        const guessInput = document.getElementById('guess');
+        guessInput.value = '';
     }
-
+  
     return (
         <div>
             <form onSubmit={e => {handleSubmit(e)}}>
@@ -30,6 +33,7 @@ export default function InputBox(props) {
                         Enter Word:
                         <input 
                             type="text"
+                            id = "guess"
                             onChange={(e) => setCandidate(e.target.value.trim())}
                         ></input>
                     </label>

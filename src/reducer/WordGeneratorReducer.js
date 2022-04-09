@@ -42,7 +42,7 @@ export function WordGeneratorReducer(state = initState, action) {
             ...state,
             word: medWords[randomIndexMedium].toUpperCase(),
             history: [],
-            attemptsRemaining: 6,
+            attemptsRemaining: action.attempts,
         }
     }
 
@@ -59,7 +59,7 @@ export function WordGeneratorReducer(state = initState, action) {
             ...state, 
             word: hardWords[randomIndexHard].toUpperCase(),
             history: [],
-            attemptsRemaining: 5,
+            attemptsRemaining: action.attempts,
         }
 
     }
@@ -72,8 +72,8 @@ export function WordGeneratorReducer(state = initState, action) {
         // Easy
 
         if (state.word.length === 5 && newWord.length === 5){
-            console.log("history array: " + state.history);
-            console.log("valid");
+            // console.log("history array: " + state.history);
+            // console.log("valid");
 
 
             return {

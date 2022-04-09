@@ -7,100 +7,101 @@ import InputBox from'./InputBox';
 
 export default function Medium(props) {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    function getMediumWord() {
-        const action = {
-            type: 'MEDIUM'
-        }
+    // function getMediumWord() {
+    //     const action = {
+    //         type: 'MEDIUM'
+    //     }
 
-        dispatch(action);
-    }
+    //     dispatch(action);
+    // }
 
    
+    return (<div></div>);
+    
 
-    return(
-        <div>
-            <h1>Difficulty: Medium</h1>
-            <button onClick={getMediumWord}>Start Game</button>
-            <InputBox></InputBox>
-            <div className="board-container">
-                <Square></Square>
+    //     <div>
+    //         <h1>Difficulty: Medium</h1>
+    //         <button onClick={getMediumWord}>Start Game</button>
+    //         <InputBox></InputBox>
+    //         <div className="board-container">
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
-
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
+    //             <Square></Square>
 
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
+    //             <Square></Square>
 
-                <Square></Square>
-
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
-
-                <Square></Square>
+    //             <Square></Square>
 
 
-            </div>
-    </div>
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+    //             <Square></Square>
+
+
+    //         </div>
+    // </div>
             
 
       
@@ -108,5 +109,5 @@ export default function Medium(props) {
 
       
 
-    );
+
 }

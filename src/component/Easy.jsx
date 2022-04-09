@@ -124,11 +124,19 @@ export default function Easy(props) {
     return(
         <div>
             <h1>Difficulty: Easy, randomWord: {randomWord}</h1>
-            <button onClick={getWord}>Start Game</button>
+            <div className="game-contents-container">
+                <button className="button-style" onClick={getWord}>Start Game</button>
+                <MessageBoard></MessageBoard>
+                <InputBox></InputBox>
+                <div id="board-container">
+                    {wordComponents}
+                </div>
+            {/* </div>
+            <button className="button-style" onClick={getWord}>Start Game</button>
             <MessageBoard></MessageBoard>
             <InputBox></InputBox>
             <div id="board-container">
-                {wordComponents}
+                {wordComponents} */}
             </div>
     </div>
     );
