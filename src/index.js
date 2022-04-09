@@ -9,14 +9,11 @@ import Easy from './component/Easy';
 import Medium from './component/Medium';
 import Hard from './component/Hard';
 import NavBar from './component/NavBar';
-import { colorReducer } from './reducer/colorReducer';
 import { WordGeneratorReducer } from './reducer/WordGeneratorReducer';
 
 
-// const storeColor = createStore(colorReducer);
+
 const store = createStore(WordGeneratorReducer);
-// const storeMediumWord = createStore(WordGeneratorReducer);
-// const storeHardWord = createStore(WordGeneratorReducer);
 
 ReactDOM.render(
   <BrowserRouter>
@@ -41,8 +38,5 @@ ReactDOM.render(
         </Routes>
     </Provider>
   </BrowserRouter>
-
-  
-  
   ,document.getElementById('root'));
 
