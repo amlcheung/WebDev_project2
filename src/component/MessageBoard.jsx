@@ -13,6 +13,15 @@ export default function MessageBoard() {
             message = "Invalid Word Length";
         }
 
+        let curGuess = state.history[state.history.length - 1];
+
+        if (curGuess !== undefined) {
+            if (state.word === curGuess.toUpperCase()) {
+                message = "Congratulations!  Would you like to try again?";
+            } else if (state.attemptsRemaining === 0 && state.word !== curGuess.toUpperCase()) {
+                message = "You failed to guess the word. End of Game.";
+            }
+        }
        
         return message;
     } 
@@ -30,7 +39,6 @@ export default function MessageBoard() {
     }
 
     const attemptsRemaining = useSelector(getAttemptsRemaining, shallowEqual);
-
 
     return(
         <div className='text-container'> 

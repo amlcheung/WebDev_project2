@@ -9,23 +9,38 @@ export default function Instructions() {
 
     return(
         <div className="text-format">
+            <h2 className="game-rules-format">Game Rules</h2>
             
-            1) Choose level of difficulty by clicking on the difficulty link at the top 
+            <p>1) Choose level of difficulty by clicking on the difficulty link at the top 
             of the page.
-            
-            - Choose level of difficulty by clicking on the difficulty link at the top 
-            of the page. 
-            - Press Start Game Button to begin the game. This will generate a random word.
-            - Enter your guess in the input box where it says "Enter Word" and click submit.
-            - 
+            </p>
 
-            If chosen letter is in the correct spot, it will appear green 
-            If a correct letter is chosen but it's in the wrong spot, it appears yellow
-            If you choose a letter that’s not in the secret word, it appears gray
-            If you enter a word that is too short or too long, you’ll receive a message "Invalid Word Length" at the top but will not deduct an attempt. 
-            If the correct word has only 1 instance of a letter but you submit a word with 2 instances of the correct letter, only 1 letter will appear yellow. The other will be gray. 
-            If you want to try a different word, press the Start Game Button again to start over and
-            generate a new word.
+            <p>2) Press Start Game Button to begin the game. This will generate a random 
+                word.
+            </p>
+
+            <p>3) Type in your guess in the input box with the prompt "Enter Word". Then 
+                click submit.
+            </p>
+
+            <p>4) You can keep submitting guesses while you still have attempts remaining.
+            </p>
+
+            <p>5) Each letter in your word will be evaluated. If a letter is in the correct spot, 
+                the box will turn green. If your letter exists in the random word,
+                the box will turn yellow. If your letter does not exist in the random word, the
+                box will remain grey. If the random word has only 1 instance of a letter but you
+                guess a word with 2 instances, 1 of your instances will still appear grey.</p>
+
+            <p>5) If you don't guess the word within the number of attempts you have, the message
+                Board will display You failed to guess the word. End of Game.". If on your current
+                attempt you correctly guess the word, the message board will display "Congratulations!  
+                Would you like to try again?"
+            </p>
+
+            <p>6) You can start a new game at any time in your current game. Just click Start Game
+                to restart the game.
+            </p>
         </div>
 
 
