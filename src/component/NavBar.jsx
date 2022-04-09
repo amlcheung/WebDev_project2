@@ -7,12 +7,13 @@ import App from './App';
 function NavBar() {
 
     return (
-        <div className="center">
-            <Link to={"/"}> Home </Link>
-            <Link to={"/easy"}>Easy</Link>
-            <Link to={"/medium"}>Medium</Link>
-            <Link to={"/hard"}>Hard</Link>
-            <Link to={"/instructions"}>Instructions</Link>
+        <div className="nav-bar-container font-style">
+            <Link className="button-format" to={"/"}> Home </Link>
+            <Link className="button-format" to={"/instructions"}>Instructions</Link>
+            <div className="button-format font-style-wordle">Wordle</div>
+            <Link className="button-format" to={"/easy"}>Easy</Link>
+            <Link className="button-format" to={"/medium"}>Medium</Link>
+            <Link className="button-format" to={"/hard"}>Hard</Link>
         </div>
     );
 }
