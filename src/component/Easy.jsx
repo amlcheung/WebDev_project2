@@ -26,23 +26,53 @@ export default function Easy(props) {
 
     // Get Guess Array
     function getWordFromHistory(state) {
-        debugger
             return state.history;
     }
 
     //const currArray = getWordFromHistory();
     //const [eachWord, setWord] = useState('');
 
-    function letterInRandomWord (goalWord, guessWordLetter){
-        for (let eachLetter = 0; eachLetter < goalWord.length; eachLetter++){
-            if (guessWordLetter == goalWord.charAt(eachLetter)){
-                return true;
+    // Function to check is the square should be yellow
+    function CheckYellow(goalWord, guessWord, letterIndexInGuess){
+        let countLetterInGuessWord = 0;
+        let countCorrectLetterInGuessWord = 0;
+        let indexesOfLetterInGuessWord = [];
+        let indexesOfLetterInGoalWord = [];
+        let countLetterInGoalWord = 0;
+        for (let index = 0; index < 5; index++){
+            if (guessWord[index] == guessWord[letterIndexInGuess]){
+                countLetterInGuessWord++;
+                indexesOfLetterInGuessWord.push(index);
+            }
+            if (goalWord[index] == guessWord[letterIndexInGuess]){
+                countLetterInGoalWord++;
+                indexesOfLetterInGoalWord.push(index);
             }
         }
+        // Count number of 'green' sqaures of given letter in given word
+        for (let correct = 0; correct < indexesOfLetterInGoalWord.length; correct++){
+            for (let lettGuess = 0; lettGuess < indexesOfLetterInGuessWord.length; lettGuess++){
+                if (indexesOfLetterInGoalWord[correct] == indexesOfLetterInGuessWord[lettGuess]){
+                    countCorrectLetterInGuessWord++;
+                }
+            }
+        }
+    
+       if (countLetterInGuessWord === countLetterInGoalWord){
+            return true;
+        } else {
+            // If the number of 'green' of that letter in the guess is == to the number of that letter -> return false
+            for (let yellowBlock = 0; yellowBlock < (countLetterInGoalWord - countCorrectLetterInGuessWord); yellowBlock++){
+                if (letterIndexInGuess == indexesOfLetterInGuessWord[yellowBlock ]){
+                    return true;
+                }
+            }
+        }
+        // If letter from guess word isn't in goal word OR the number of 'green' of that letter in the guess is == to the number of that letter -> return false
+        return false;
     }
     const randomWord = useSelector(getWordFromState, shallowEqual);
     const guessArray= useSelector(getWordFromHistory, shallowEqual);
-    console.log(randomWord.charAt(0));
     const wordComponents = [];
     // If the number of guesses is less than 7, add the guess
     if (guessArray.length <= 7){
@@ -52,7 +82,7 @@ export default function Easy(props) {
                 if (guessArray[i].toUpperCase().charAt(j) == randomWord.charAt(j)){
                     const component = <Square color='green' letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
                     list.push(component);
-                } else if (letterInRandomWord(randomWord, guessArray[i].toUpperCase().charAt(j))){
+                } else if (CheckYellow(randomWord, guessArray[i].toUpperCase(), j)){
                     const component = <Square color='yellow' letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
                     list.push(component);
                 } else {
@@ -70,7 +100,7 @@ export default function Easy(props) {
                 if (guessArray[i].toUpperCase().charAt(j) == randomWord.charAt(j)){
                     const component = <Square color='green' letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
                     list.push(component);
-                } else if (letterInRandomWord(randomWord, guessArray[i].toUpperCase().charAt(j))){
+                } else if (CheckYellow(randomWord, guessArray[i].toUpperCase(), j)){
                     const component = <Square color='yellow' letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
                     list.push(component);
                 } else {

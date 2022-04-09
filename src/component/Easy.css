@@ -9,6 +9,7 @@ body {
   display: grid;
   justify-content: center;
   grid-gap: 10px;
+  margin-top: 5%;
   grid-template-areas: "square square square square square"
                        "square square square square square"
                        "square square square square square"
