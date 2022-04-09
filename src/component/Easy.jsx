@@ -68,7 +68,7 @@ export default function Easy(props) {
         for (let i = 0; i < 7; i++){
             const list = []
             for (let j = 0; j < guessArray[i].length; j++){
-                const component = <Square letter={guessArray[i].charAt(j)}></Square>
+                const component = <Square letter={guessArray[i].toUpperCase().charAt(j)}></Square>
                 list.push(component);
             }
             wordComponents.push(list);
