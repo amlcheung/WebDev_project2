@@ -12,6 +12,9 @@ export default function MessageBoard() {
         if (state.invalidWordLength) {
             message = "Invalid Word Length";
         }
+        if (state.invalidWord){
+            message = "Word not in dictionary";
+        }
 
         let curGuess = state.history[state.history.length - 1];
 

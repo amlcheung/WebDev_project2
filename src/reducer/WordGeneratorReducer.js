@@ -1,17 +1,18 @@
-// reducer to randomly select word?
-
+// Initial states
 const initState = {
     word: "",
     history: [],
     invalidWordLength: false,
     attemptsRemaining: -1,
+    invalidWord: false,
+    dictionaryWords: []
 }
 
 const max = 10;
 const min = 0;
 
 export function WordGeneratorReducer(state = initState, action) {
-    //debugger
+
     if (action.type === 'EASY') {
         const easyWords = ["Cable", "Faces", "Label", "Nacho", "Wacky", 
                        "Yacht", "Adult", "Grass", "Water", "Tower"];
@@ -68,9 +69,21 @@ export function WordGeneratorReducer(state = initState, action) {
     if (action.type === "EVALUATE_WORD") {
         console.log("eval function called");
         let newWord = action.value.toString();
-        // console.log("input word length: " + newWord.length)
-        // Easy
 
+        /*
+        fetch('english3.txt')
+        .then(response => response.text())
+        .then(text => console.log(text))
+/*
+        if (!dictionaryWords.includes(action.value)){
+            return {
+                ...state,
+                invalidWord: true,
+                // attemptsRemaining: attemptsRemaining,
+            }
+        }
+        */
+        // Easy
         if (state.word.length === 5 && newWord.length === 5){
             // console.log("history array: " + state.history);
             // console.log("valid");
@@ -81,6 +94,8 @@ export function WordGeneratorReducer(state = initState, action) {
                 history: [...state.history, action.value],
                 invalidWordLength: false,
                 attemptsRemaining: state.attemptsRemaining - 1,
+                invalidWord: false,
+
             }
         }
         // Medium
@@ -91,6 +106,7 @@ export function WordGeneratorReducer(state = initState, action) {
                 history: [...state.history, action.value],
                 invalidWordLength: false,
                 attemptsRemaining: state.attemptsRemaining - 1,
+                invalidWord: false,
             }
         }
         // Hard
@@ -101,6 +117,7 @@ export function WordGeneratorReducer(state = initState, action) {
                 history: [...state.history, action.value],
                 invalidWordLength: false,
                 attemptsRemaining: state.attemptsRemaining - 1,
+                invalidWord: false,
             }
         }
         // Not valid
@@ -109,6 +126,7 @@ export function WordGeneratorReducer(state = initState, action) {
             return {
                 ...state,
                 invalidWordLength: true,
+                invalidWord: false,
                 // attemptsRemaining: attemptsRemaining,
             }
         }
