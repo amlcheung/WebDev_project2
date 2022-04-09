@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { shallowEqual, useDispatch } from 'react-redux';
-
 import './Easy.css';
 import Square from './Square';
 import InputBox from'./InputBox';
 import { useSelector } from 'react-redux';
+import MessageBoard from './MessageBoard';
 
 export default function Easy(props) {
 
@@ -13,10 +13,10 @@ export default function Easy(props) {
     function getWord() {
         const action = {
             type: 'EASY',
+            attempts: 7,
             // type: setDifficulty
             // level: 'easy'
         }
-
         dispatch(action);
     }
 
@@ -125,11 +125,11 @@ export default function Easy(props) {
         <div>
             <h1>Difficulty: Easy, randomWord: {randomWord}</h1>
             <button onClick={getWord}>Start Game</button>
+            <MessageBoard></MessageBoard>
             <InputBox></InputBox>
             <div id="board-container">
                 {wordComponents}
             </div>
     </div>
-
     );
 }

@@ -1,0 +1,11 @@
+.text-format {
+    width: auto;
+    height: auto;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}

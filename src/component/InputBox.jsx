@@ -23,7 +23,6 @@ export default function InputBox(props) {
         sendWordToHistory();
     }
 
-
     return (
         <div>
             <form onSubmit={e => {handleSubmit(e)}}>

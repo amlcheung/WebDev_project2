@@ -35,6 +35,9 @@ ReactDOM.render(
           <Route path="/hard" element={
             <Hard />
           }></Route>
+          <Route path="/instructions" element={
+            <Instructions />
+          }></Route>
         </Routes>
     </Provider>
   </BrowserRouter>
