@@ -33,6 +33,14 @@ export default function Easy(props) {
     //const currArray = getWordFromHistory();
     //const [eachWord, setWord] = useState('');
 
+    function letterInRandomWord (goalWord, guessWordLetter){
+        for (let eachLetter = 0; eachLetter < goalWord.length; eachLetter++){
+            if (guessWordLetter == goalWord.charAt(eachLetter)){
+                return true;
+            }
+        }
+    }
+
     const randomWord = useSelector(getWordFromState, shallowEqual);
     const guessArray= useSelector(getWordFromHistory, shallowEqual);
     console.log(randomWord.charAt(0));
@@ -42,11 +50,14 @@ export default function Easy(props) {
         for (let i = 0; i < guessArray.length; i++){
             const list = []
             for (let j = 0; j < guessArray[i].length; j++){
-                if (guessArray[i].charAt(j) == randomWord.charAt(j)){
-                    const component = <Square color='green' letter={guessArray[i].charAt(j)} ></Square>
+                if (guessArray[i].toUpperCase().charAt(j) == randomWord.charAt(j)){
+                    const component = <Square color='green' letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
+                    list.push(component);
+                } else if (letterInRandomWord(randomWord, guessArray[i].toUpperCase().charAt(j))){
+                    const component = <Square color='yellow' letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
                     list.push(component);
                 } else {
-                    const component = <Square color='white'letter={guessArray[i].charAt(j)} ></Square>
+                    const component = <Square color='white'letter={guessArray[i].toUpperCase().charAt(j)} ></Square>
                     list.push(component);
                 }
             }

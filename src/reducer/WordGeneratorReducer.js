@@ -27,7 +27,7 @@ export function WordGeneratorReducer(state = initState, action) {
 
         return {
             ...state, 
-            word: easyWords[randomIndexEasy],
+            word: easyWords[randomIndexEasy].toUpperCase(),
         }
     }
 
@@ -40,7 +40,7 @@ export function WordGeneratorReducer(state = initState, action) {
 
         console.log(medWords[randomIndexMedium]);
         return {
-            word: medWords[randomIndexMedium],
+            word: medWords[randomIndexMedium].toUpperCase(),
         }
     }
 
@@ -54,7 +54,7 @@ export function WordGeneratorReducer(state = initState, action) {
         console.log(hardWords[randomIndexHard]);
 
         return {
-            word: hardWords[randomIndexHard],
+            word: hardWords[randomIndexHard].toUpperCase(),
         }
 
     }
