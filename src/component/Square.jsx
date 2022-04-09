@@ -5,12 +5,12 @@ import './Square.css';
 export default function Square(props) {
     let className = 'square';
 
-    if (props.color == 'white'){
+    if (props.color === 'white'){
         className += ' ' + 'white';
-    } else if (props.color == 'green'){
-        className = ' ' +  'green';
-    } else if (props.color == 'yellow'){
-        className = ' ' + 'yellow';
+    } else if (props.color === 'green'){
+        className += ' ' +  'green';
+    } else if (props.color === 'yellow'){
+        className += ' ' + 'yellow';
     }
 
     if (props.letter){
