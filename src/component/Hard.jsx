@@ -124,7 +124,7 @@ export default function Hard(props) {
 
     return(
         <div>
-            <h1>Difficulty: Hard, randomWord: {randomWord}</h1>
+            <h1>Hard</h1>
             <div className="game-contents-container">
                 <button className="button-style" onClick={getWord}>Start Game</button>
                 <MessageBoard></MessageBoard>

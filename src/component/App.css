@@ -13,19 +13,24 @@ body {
   text-align: center;
 }
 
-/* .navbar-container {
+  
+#wel-board-container {
+  width: auto;
+  height: auto;
   display: grid;
-    position: sticky;
-    top: 0%;
-    z-index: 100;
-    grid-template-areas:
-        'Instructions Easy Medium Hard';
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    font-size: 70px;
-    text-align: center;
-    height: 100px;
-    grid-gap: 10px;
-    background-color: white;
-    border-radius: 8px;
-    margin-bottom: 20px;
-} */
+  justify-content: center;
+  grid-gap: 7px;
+  margin-top: 5%;
+  grid-template-areas: 
+  "square square square square square square square "
+  "square square square square square square square "
+  "square square square square square square square "
+  "square square square square square square square "
+  "square square square square square square square "
+  "square square square square square square square ";
+  grid-template-columns:  70px 70px 70px 70px 70px 70px 70px;
+  grid-template-rows: 70px  70px  70px  70px  70px  70px;}
+
+#wel-board-container > square {
+  grid-area: square;
+}

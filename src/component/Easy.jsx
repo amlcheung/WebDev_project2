@@ -37,6 +37,7 @@ export default function Easy(props) {
     var textByLine = text.split("\n")
     });
     */
+   
     const dispatch = useDispatch();
 
     function getWord() {
@@ -152,7 +153,7 @@ export default function Easy(props) {
 
     return(
         <div>
-            <h1>Difficulty: Easy, randomWord: {randomWord}</h1>
+            <h1>Easy</h1>
             <div className="game-contents-container">
                 <button className="button-style" onClick={getWord}>Start Game</button>
                 <MessageBoard></MessageBoard>

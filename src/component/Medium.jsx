@@ -124,7 +124,7 @@ export default function Medium(props) {
 
     return(
         <div>
-            <h1>Difficulty: Medium, randomWord: {randomWord}</h1>
+            <h1>Medium</h1>
             <div className="game-contents-container">
                 <button className="button-style" onClick={getWord}>Start Game</button>
                 <MessageBoard></MessageBoard>
