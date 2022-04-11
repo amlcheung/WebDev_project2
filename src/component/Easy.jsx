@@ -145,7 +145,7 @@ export default function Easy(props) {
     for (let z = 0; z < 7 - guessArray.length; z++){
         const blankList = []
             for (let j = 0; j < 5; j++){
-                const component = <Square color="white"></Square>
+                const component = <Square color="black"></Square>
                 blankList.push(component);
             }
             wordComponents.push(blankList);

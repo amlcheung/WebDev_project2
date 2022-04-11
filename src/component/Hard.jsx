@@ -116,7 +116,7 @@ export default function Hard(props) {
     for (let z = 0; z < 5 - guessArray.length; z++){
         const blankList = []
             for (let j = 0; j < 7; j++){
-                const component = <Square color="white"></Square>
+                const component = <Square color="black"></Square>
                 blankList.push(component);
             }
             wordComponents.push(blankList);

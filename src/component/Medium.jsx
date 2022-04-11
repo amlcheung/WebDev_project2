@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector, shallowEqual } from 'react-redux';
 import MessageBoard from './MessageBoard';
-
 import './Medium.css';
 import Square from './Square';
 import InputBox from'./InputBox';
@@ -116,7 +115,7 @@ export default function Medium(props) {
     for (let z = 0; z < 6 - guessArray.length; z++){
         const blankList = []
             for (let j = 0; j < 6; j++){
-                const component = <Square color="white"></Square>
+                const component = <Square color="black"></Square>
                 blankList.push(component);
             }
             wordComponents.push(blankList);

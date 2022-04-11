@@ -1,6 +1,6 @@
 .square {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     max-width: 100px;
     max-height: 100px;
     display: flex;
@@ -10,17 +10,37 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: white;
+    border: solid 1px grey;
 }
 
 .white {
     background-color: grey;
+    border: none;
 }
 
 .green {
     background-color: darkgreen;
+    border: none;
+
 }
 
 .yellow {
     background-color: gold;
+    border: none;
+
 }
+
+.black {
+    background-color: black;
+    border: solid 1px grey;
+}
+
+@media (max-width: 450px){
+    .square {
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
+      
+    }
+  }
 

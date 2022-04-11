@@ -10,7 +10,7 @@
     grid-gap: 10px;
     background-color: black;
     margin-bottom: 20px; 
-    border-bottom: 2px solid grey;
+    border-bottom: 1px solid grey;
 }
 
 .home{
@@ -66,4 +66,19 @@ a:active {
     text-decoration: none;
 }
 
+@media (max-width: 450px){
+    .nav-bar-container{
+        height: 40px;
+        grid-gap: 7px;
+    }
+    .font-style{
+        font-size: 10px;
+    }
+  
+    .font-style-wordle{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
 
