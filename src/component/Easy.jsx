@@ -7,36 +7,6 @@ import { useSelector } from 'react-redux';
 import MessageBoard from './MessageBoard';
 
 export default function Easy(props) {
-
-    /*
-    const lineReader = require('line-reader');
-    lineReader.eachLine('./english3.txt',(line,last)=>{
-    console.log(line);
-})
-
-    /*
-    let fs = require('fs').promises();
-    fs.readFile('english3.txt', function(err, data) {
-        if(err) throw err;
-    
-        const arr = data.toString().replace(/\r\n/g,'\n').split('\n');
-    
-        for(let i of arr) {
-            console.log(i);
-        }
-    });
-    /*
-    const fs = require('fs');
-    let text = fs.readFileSync('./english3.txt', 'utf-8');
-    let textByLine = text.split("\n");
-    console.log(textByLine);
-
-/*
-    var fs = require("fs");
-    fs.readFile("./mytext.txt", function(text){
-    var textByLine = text.split("\n")
-    });
-    */
    
     const dispatch = useDispatch();
 
