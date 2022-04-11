@@ -8,7 +8,7 @@ export default function MessageBoard() {
 
     function createMessage(state) {
        let message = "";
-        
+        // Checks word length 
         if (state.current_diff == "EASY" && state.easyinvalidWordLength == true){
             message = "Invalid Word Length";
         }
@@ -18,11 +18,11 @@ export default function MessageBoard() {
         else if (state.current_diff == "HARD" && state.hardinvalidWordLength == true){
              message = "Invalid Word Length";
         } 
-    
+        // Checks invalid word
         if (state.current_diff == "EASY" && state.easyinvalidWord == true){
             message = "Word not in dictionary";
         }
-            else if (state.current_diff == "MEDIUM" && state.medinvalidWord == true){
+        else if (state.current_diff == "MEDIUM" && state.medinvalidWord == true){
                 message = "Word not in dictionary";
         }
         else if (state.current_diff == "HARD" && state.hardinvalidWord == true){
@@ -32,7 +32,7 @@ export default function MessageBoard() {
         let easycurGuess = state.easy_history[state.easy_history.length - 1];
         let medcurGuess = state.med_history[state.med_history.length - 1];
         let hardcurGuess = state.hard_history[state.hard_history.length - 1];
-
+        // Checks if game is over
         if (easycurGuess !== undefined) {
             if (state.current_diff == "EASY" && state.easy_word === easycurGuess.toUpperCase()) {
                 message = "Congratulations!  Would you like to try again?";
@@ -57,7 +57,6 @@ export default function MessageBoard() {
        
         return message;
     } 
-    
     
     const currentMessage = useSelector(createMessage, shallowEqual);
 
