@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector, shallowEqual } from 'react-redux';
 import MessageBoard from './MessageBoard';
@@ -14,20 +14,21 @@ export default function Hard(props) {
     function getWord() {
         const action = {
             type: 'HARD',
-            attempts: 5,
-            // type: setDifficulty
-            // level: 'easy'
+            newGame: 'YES',
+            hardattempts: 5,
         }
         dispatch(action);
     }
 
+    useEffect(()=> {dispatch({type: 'HARD', hardattempts: 5,})});
+
     function getWordFromState(state) {
-        return state.word;
+        return state.hard_word;
     }
 
     // Get Guess Array
     function getWordFromHistory(state) {
-            return state.history;
+            return state.hard_history;
     }
 
     //const currArray = getWordFromHistory();
@@ -126,7 +127,7 @@ export default function Hard(props) {
         <div>
             <h1>Hard</h1>
             <div className="game-contents-container">
-                <button className="button-style" onClick={getWord}>Start Game</button>
+                <button className="button-style" onClick={getWord}>New Game?</button>
                 <MessageBoard></MessageBoard>
                 <InputBox></InputBox>
                 <div id="hard-board-container">

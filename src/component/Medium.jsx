@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector, shallowEqual } from 'react-redux';
 import MessageBoard from './MessageBoard';
@@ -13,20 +13,21 @@ export default function Medium(props) {
     function getWord() {
         const action = {
             type: 'MEDIUM',
-            attempts: 6,
-            // type: setDifficulty
-            // level: 'easy'
+            newGame: 'YES',
+            medattempts: 6,
         }
         dispatch(action);
     }
 
+    useEffect(()=> {dispatch({type: 'MEDIUM', medattempts: 6,})});
+
     function getWordFromState(state) {
-        return state.word;
+        return state.med_word;
     }
 
     // Get Guess Array
     function getWordFromHistory(state) {
-            return state.history;
+            return state.med_history;
     }
 
     //const currArray = getWordFromHistory();
@@ -125,7 +126,7 @@ export default function Medium(props) {
         <div>
             <h1>Medium</h1>
             <div className="game-contents-container">
-                <button className="button-style" onClick={getWord}>Start Game</button>
+                <button className="button-style" onClick={getWord}>New Game?</button>
                 <MessageBoard></MessageBoard>
                 <InputBox></InputBox>
                 <div id="medium-board-container">

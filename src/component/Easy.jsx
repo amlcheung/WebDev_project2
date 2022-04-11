@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { shallowEqual, useDispatch } from 'react-redux';
 import './Easy.css';
 import Square from './Square';
@@ -13,24 +13,22 @@ export default function Easy(props) {
     function getWord() {
         const action = {
             type: 'EASY',
-            attempts: 7,
-            // type: setDifficulty
-            // level: 'easy'
+            newGame: 'YES',
+            easyattempts: 7,
         }
         dispatch(action);
     }
 
+    useEffect(()=> {dispatch({type: 'EASY', easyattempts: 7,})});
+
     function getWordFromState(state) {
-        return state.word;
+        return state.easy_word;
     }
 
     // Get Guess Array
     function getWordFromHistory(state) {
-            return state.history;
+            return state.easy_history;
     }
-
-    //const currArray = getWordFromHistory();
-    //const [eachWord, setWord] = useState('');
 
     // Function to check is the square should be yellow
     function CheckYellow(goalWord, guessWord, letterIndexInGuess){
@@ -125,7 +123,7 @@ export default function Easy(props) {
         <div>
             <h1>Easy</h1>
             <div className="game-contents-container">
-                <button className="button-style" onClick={getWord}>Start Game</button>
+                <button className="button-style" onClick={getWord}>New Game?</button>
                 <MessageBoard></MessageBoard>
                 <InputBox></InputBox>
                 <div id="easy-board-container">
